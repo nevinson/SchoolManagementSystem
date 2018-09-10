@@ -1,5 +1,3 @@
-using System;
-
 namespace Nevinson.School.Models
 {
     public class ErrorViewModel
