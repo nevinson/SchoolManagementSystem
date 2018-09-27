@@ -14,6 +14,7 @@ using Nevinson.School.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Nevinson.School.Services;
+using Nevinson.School.Models;
 
 namespace Nevinson.School
 {
@@ -47,7 +48,7 @@ namespace Nevinson.School
                     Configuration.GetConnectionString("DefaultConnection")));
 
             //
-            services.AddDefaultIdentity<IdentityUser>()
+            services.AddDefaultIdentity<ApplicationUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
@@ -83,7 +84,7 @@ namespace Nevinson.School
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ApplicationDbContext context)
         {
             // 
-            context.Database.Migrate();
+            //context.Database.Migrate();
 
 
             if (env.IsDevelopment())
